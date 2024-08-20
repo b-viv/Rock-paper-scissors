@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="scss/style.css">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body>
+  <main>
+    <div class="game-header">
+      <div class="game-header__border">
+        <div class="title">
+          <img src="images/logo.svg" alt="">
+        </div>
+        <div class="score">
+          <p>
+            <span>Score</span>
+            <span class="score__number">0</span>
+          </p>
+        </div>
+      </div>
+      <div class="game-header__switcher">
+        <p>level</p>
+        <label class="switch">
+          <input type="checkbox" id="toggleSwitch">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="game">
+      <div class="game__container level-easy">
+        <div class="game-options triangle">
+          <img src="images/bg-triangle.svg" alt="">
+          <div class="paper-start paper-easy paper start-btn btn">
+            <button type="button" class="paper-btn">
+              <img src="images/icon-paper.svg" alt="">
+            </button>
+          </div>
+          <div class="scissors-start scissors-easy scissors start-btn btn">
+            <button type="button" class="scissors-btn">
+              <img src="images/icon-scissors.svg" alt="scissors">
+            </button>
+          </div>
+          <div class="rock-start rock-easy rock start-btn btn">
+            <button type="button" class="rock-btn">
+              <img src="images/icon-rock.svg" alt="rock">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="game__container level-hard hide">
+        <div class="game-options pentagon">
+          <img src="images/bg-pentagon.svg" alt="">
+
+          <div class="paper-start paper-hard paper start-btn btn">
+            <button type="button" class="paper-btn">
+              <img src="images/icon-paper.svg" alt="paper">
+            </button>
+          </div>
+          <div class="scissors-start scissors-hard scissors start-btn btn">
+            <button type="button" class="scissors-btn">
+              <img src="images/icon-scissors.svg" alt="scissors">
+            </button>
+          </div>
+          <div class="rock-start rock-hard rock start-btn btn">
+            <button type="button" class="rock-btn btn__inner">
+              <img src="images/icon-rock.svg" alt="rock">
+            </button>
+          </div>
+          <div class="lizard-start lizard-hard lizard start-btn btn">
+            <button type="button" class="lizard-btn">
+              <img src="images/icon-lizard.svg" alt="lizard">
+            </button>
+          </div>
+          <div class="spock-start spock-hard spock start-btn btn">
+            <button type="button" class="spock-btn">
+              <img src="images/icon-spock.svg" alt="spock">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="game__results hide">
+        <div class="chosen-container left-side">
+          <div class="player chosen"></div>
+          <div class="picked-text">
+            <p>You Picked</p>
+          </div>
+        </div>
+        <div class="chosen-container right-side">
+          <div class="house chosen">
+          </div>
+          <div class="picked-text">
+            <p>The House Picked</p>
+          </div>
+        </div>
+        <div class="result">
+          <div class="result__container hide">
+            <p class="result-text"></p>
+            <button type="button" class="play-btn">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show-rules-btn">
+      <button type="button" class="rules-btn">Rules</button>
+    </div>
+    <div class="rules hide">
+      <div class="rules__container">
+        <h2>Rules</h2>
+        <div class="close">
+          <button class="close__btn">
+            <img src="images/icon-close.svg" alt="close">
+          </button>
+        </div>
+        <div class="rules-img">
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

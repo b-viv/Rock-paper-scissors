@@ -1,0 +1,45 @@
+@use '../scss/media-queries' as media;
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+main {
+    position: relative;
+    min-height: 100vh;
+    background: var(--Radial-Gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include media.breakpoint-1000 {
+        justify-content: space-around;
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.hide {
+    display: none !important;
+}

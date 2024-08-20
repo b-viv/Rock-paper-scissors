@@ -1,0 +1,408 @@
+@use '../scss/mixins' as mix;
+@use '../scss/media-queries' as media;
+
+.game {
+    @include mix.flexCenter;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include media.breakpoint-480 {
+        @include mix.widthHeight(auto, 500px);
+    }
+
+    @include media.breakpoint-1000 {
+        @include mix.widthHeight(auto, 560px);
+    }
+
+    &__container {
+        position: relative;
+        width: 100%;
+        margin: 0 10px;
+
+        & .game-options {
+            position: relative;
+            @include mix.maxWidthMaxHeight(220px, 100%);
+            margin: 0 auto;
+
+            @include media.breakpoint-480 {
+                @include mix.maxWidthMaxHeight(100%, 100%);
+            }
+
+            & img {
+                width: 100%;
+                display: block;
+            }
+
+            & .start-btn {
+                position: absolute;
+        
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            .btn {
+                position: absolute;
+                @include mix.flexCenter;
+                @include mix.widthHeight(130px, 130px);
+                border-radius: 50%;
+                z-index: 999;
+                @include mix.widthHeight(100px, 100px);
+
+                @include media.breakpoint-480 {
+                    @include mix.widthHeight(150px, 150px);
+                }
+                
+                @include media.breakpoint-1000 {
+                    @include mix.widthHeight(200px, 200px);
+                }
+            }
+
+            & .paper-easy {
+                top: -15%;
+                left: -20px;
+
+                @include media.breakpoint-480 {
+                    top: -60px;
+                    left: -40px;
+                }
+
+                @include media.breakpoint-1000 {
+                    top: -100px;
+                    left: -95px;
+                }
+            }
+            & .scissors-easy {
+                top: -15%;
+                right: -20px;
+
+                @include media.breakpoint-480 {
+                    top: -60px;
+                    right: -40px;
+                }
+
+                @include media.breakpoint-1000 {
+                    top: -100px;
+                    right: -95px;
+                }
+            }
+            & .rock-easy {
+                bottom: -15px;
+                left: 60px;
+
+                @include media.breakpoint-480 {
+                    left: 83px;
+                    bottom: -20px;
+                }
+
+                @include media.breakpoint-1000 {
+                    left: 55px;
+                    bottom: -55px;
+                }
+            }
+
+            & .rock-hard {
+                bottom: -55px;
+                right: -3px;
+
+                @include media.breakpoint-480 {
+                    bottom: -70px;
+                    right: -15px;
+                }
+
+                @include media.breakpoint-1000 {
+                    bottom: -115px;
+                    right: -60px;
+                }
+            }
+
+            & .paper-hard {
+                top: 35px;
+                right: -40px;
+
+                @include media.breakpoint-480 {
+                    top: 50px;
+                    right: -55px;
+                }
+
+                @include media.breakpoint-1000 {
+                    top: 15px;
+                    right: -125px;
+                }
+            }
+
+            & .scissors-hard {
+                top: -40px;
+                left: 66px;
+
+                @include media.breakpoint-480 {
+                    top: -70px;
+                    left: 93px;
+                }
+
+                @include media.breakpoint-1000 {
+                    top: -110px;
+                    left: 65px;
+                }
+            }
+
+            & .lizard-hard {
+                bottom: -55px;
+                left: -3px;
+
+                @include media.breakpoint-480 {
+                    buttom: -70px;
+                    left: -15px;
+                }
+
+                @include media.breakpoint-1000 {
+                    bottom: -115px;
+                    left: -60px;
+                }
+            }
+
+            & .spock-hard {
+                top: 35px;
+                left: -40px;
+
+                @include media.breakpoint-480 {
+                    top: 50px;
+                    left: -55px;
+                }
+
+                @include media.breakpoint-1000 {
+                    top: 15px;
+                    left: -125px;
+                }
+            }
+        }
+    }
+
+    &__results {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        color: var(--White);
+
+        @include media.breakpoint-480 {
+            margin: 0;
+            justify-content: space-evenly;
+        }
+
+        @include media.breakpoint-1000 {
+            justify-content: center;
+        }
+
+        & .chosen-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include media.breakpoint-1000 {
+                width: fit-content;
+                flex-direction: column-reverse;
+            }
+
+            & .chosen {
+                @include mix.flexCenter;
+                border-radius: 50%;
+
+                @include media.breakpoint-480 {
+                    @include mix.widthHeight(200px, 200px);
+                }
+
+                @include media.breakpoint-1000 {
+                    @include mix.widthHeight(300px, 300px);
+                }
+
+                & .btn {
+                    @include mix.flexCenter;
+                    @include mix.widthHeight(130px, 130px);
+                    border-radius: 50%;
+                    z-index: 999;
+                    @include mix.widthHeight(100px, 100px);
+                
+                    @include media.breakpoint-480 {
+                        @include mix.widthHeight(150px, 150px);
+                    }
+                
+                    @include media.breakpoint-1000 {
+                        @include mix.widthHeight(200px, 200px);
+                    }
+                }
+
+                & .picked-btn {
+                    @include mix.widthHeight(150px, 150px);
+
+                    @include media.breakpoint-480 {
+                        @include mix.widthHeight(200px, 200px);
+                    }
+
+                    @include media.breakpoint-1000 {
+                        @include mix.widthHeight(300px, 300px);
+                    }
+
+                    & [type=button] {
+                        cursor: default;
+                    }
+                }
+            }
+
+            & .house {
+                min-width: 150px;
+                min-height: 150px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    @include mix.widthHeight(100px, 100px);
+                    background: hsl(237, 49%, 15%);
+                    border-radius: 50%;
+                
+                    @include media.breakpoint-480 {
+                        @include mix.widthHeight(150px, 150px);
+                    }
+                
+                    @include media.breakpoint-1000 {
+                        @include mix.widthHeight(230px, 230px);
+                    }
+                }
+            }
+
+            & .picked-text {
+                margin: 30px 0;
+                font-size: 15px;
+                color: var(--White);
+                letter-spacing: 2px;
+
+                @include media.breakpoint-480 {
+                    margin: 30px 0 0;
+                }
+
+                @include media.breakpoint-1000 {
+                    margin: 0 0 65px 0;
+                    font-size: 23px;
+                    letter-spacing: 3px;
+                }
+            }
+        }
+
+        & .left-side {
+            order: 1;
+        }
+
+        & .right-side {
+            order: 2;
+            @include media.breakpoint-1000 {
+                order: 3;
+            }
+        }
+
+        & .result {
+            order: 3;
+            @include mix.widthHeight(100%, 190px);
+            @include mix.flexCenter;
+            margin: 30px 0;
+
+            @include media.breakpoint-480 {
+                margin: 0;
+            }
+
+            @include media.breakpoint-1000 {
+                @include mix.widthHeight(fit-content, 190px);
+                order: 2;
+                margin: 0 50px;
+            }
+
+            &__container {
+                margin: 20px auto;
+
+                @include media.breakpoint-1000 {
+                    transform: translateY(23px);
+                    width: fit-content;
+                }
+
+                & .result-text {
+                    color: var(--White);
+                    font-size: 56px;
+                    margin: 15px 0;
+                }
+
+                & .play-btn {
+                    width: 100%;
+                    padding: 15px 0;
+                    border-radius: 10px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: var(--Dark-Text);
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: hsl(349, 70%, 56%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.add-shadows {
+    box-shadow:
+        0px 0px 0px 20px hsla(189, 59%, 53%, 0.017),
+        0px 0px 0px 40px hsla(189, 59%, 53%, 0.02),
+        0px 0px 0px 60px hsla(189, 59%, 53%, 0.03);
+    transition: .7s ease-out;
+
+    @include media.breakpoint-1000 {
+        box-shadow:
+            0px 0px 0px 50px hsla(189, 59%, 53%, 0.017),
+            0px 0px 0px 100px hsla(189, 59%, 53%, 0.02),
+            0px 0px 0px 150px hsla(189, 59%, 53%, 0.03);
+    }
+}
+
+.btn {
+    -webkit-box-shadow: inset 0px -9px 0px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px -9px 0px -1px rgba(0, 0, 0, 0.2);
+
+    & [type=button] {
+        -webkit-box-shadow: inset 0px 9px 0px -1px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0px 9px 0px -1px rgba(0, 0, 0, 0.2);
+        @include mix.flexCenter();
+        cursor: default;
+        position: relative;
+        @include mix.widthHeight(75%, 75%);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    
+        & img {
+            width: 40%;
+        }
+    }
+}
+
+.rock {
+    background: var(--Rock-Gradient);
+}
+
+.scissors {
+    background: var(--Scissors-Gradient);
+}
+
+.paper {
+    background: var(--Paper-Gradient);
+}
+
+.lizard {
+    background: var(--Lizard-Gradient);
+}
+
+.spock {
+    background: var(--Cyan)
+}

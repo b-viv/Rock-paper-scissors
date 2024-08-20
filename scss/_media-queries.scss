@@ -1,0 +1,14 @@
+$breakpoint-480: 480px;
+$breakpoint-1000: 1000px;
+
+@mixin breakpoint-480 {
+    @media only screen and (min-width: $breakpoint-480) {
+        @content
+    }
+};
+
+@mixin breakpoint-1000 {
+    @media only screen and (min-width: $breakpoint-1000) {
+        @content
+    }
+};

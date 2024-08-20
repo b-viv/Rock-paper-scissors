@@ -1,0 +1,15 @@
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin maxWidthMaxHeight($maxWidth, $maxheight) {
+    max-width: $maxWidth;
+    max-height: $maxheight;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

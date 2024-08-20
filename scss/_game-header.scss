@@ -1,0 +1,151 @@
+@use '../scss/mixins' as mix;
+@use '../scss/media-queries' as media;
+
+.game-header {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    @include mix.flexCenter;
+
+    @include media.breakpoint-1000 {
+        margin-top: 2.5rem;
+    }
+
+    &__border {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 3px solid var(--Header-Outline);
+        border-radius: 5px;
+        padding: 20px;
+        gap: 10px;
+
+        @include media.breakpoint-480 {
+            width: 80%;
+        }
+
+        @include media.breakpoint-1000 {
+            width: 70%;
+            max-width: 700px;
+            border-radius: 20px;
+            margin: 0 50px;
+        }
+
+        & .title {
+            width: 150px;
+            display: block;
+        }
+
+        & .score {
+            padding: 20px 30px;
+            background-color: var(--White);
+            letter-spacing: 1px;
+            color: var(--Score-Text);
+            border-radius: 5px;
+            display: block;
+
+            @include media.breakpoint-1000 {
+                padding: 13px 50px;
+            }
+
+            & p span {
+                display: block;
+                text-align: center;
+                font-size: .6rem;
+                color: var(--Score-Text);
+                font-weight: 600;
+
+                @include media.breakpoint-1000 {
+                    font-size: 1rem;
+                }
+            }
+
+            &__number {
+                font-size: 2.4rem !important;
+                color: var(--Dark-Text) !important;
+                letter-spacing: -2px;
+                line-height: 2.5rem;
+                font-style: normal;
+
+                @include media.breakpoint-1000 {
+                    font-size: 4rem !important;
+                    letter-spacing: 1px;
+                    line-height: 4.2rem;
+                }
+            }
+        }
+    }
+
+    &__switcher {
+        @include mix.flexCenter;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        position: absolute;
+        right: 15px;
+        bottom: -70px;
+
+        @include media.breakpoint-480 {
+            right: 30px;
+        }
+        
+        @include media.breakpoint-1000 {
+            right: 10%;
+        }
+
+        & p {
+            display: block;
+            color: var(--White);
+        }
+
+        & label.switch {
+            position: relative;
+            display: inline-block;
+            @include mix.widthHeight(70px, 30px);
+
+            & #toggleSwitch {
+                opacity: 0;
+                @include mix.widthHeight(0, 0);
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(114, 219, 223, 0.466);
+                transition: .4s;
+                border-radius: 34px;
+        
+                &::before {
+                    @include mix.flexCenter;
+                    position: absolute;
+                    content: "😎";
+                    font-size: 30px;
+                    @include mix.widthHeight(30px, 15px);
+                    left: 0px;
+                    bottom: 9.5px;
+                    transition: .4s;
+                    border-radius: 50%;
+                    text-shadow: 0 0 9px black
+                }
+            }
+            input:checked+.slider {
+                background-color: rgba(212, 122, 122, 0.466);
+
+                &:before {
+                    @include mix.flexCenter();
+                    content: '😈';
+                    font-size: 30px;
+                    width: 45px;
+                    transform: translateX(33px);
+                    text-shadow: 0 0 9px var(--White);
+                }
+            }
+        }
+    }
+}
