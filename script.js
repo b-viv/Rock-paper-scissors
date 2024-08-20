@@ -110,16 +110,6 @@ displayScore = () => {
     localStorage.setItem('score', score);
 };
 
-// removeAndAddClasses = () => {
-//     currentScore = score;
-//     levelEasy.classList.add('hide');
-//     levelHard.classList.add('hide');
-//     triangle.classList.add('hide');
-//     pentagon.classList.add('hide');
-//     game.classList.remove('hide');
-//     switchContainer.classList.add('hide');
-// };
-
 displayResult = (lose1, lose2, win1, win2) => {
     let resulttext = document.querySelector('.result-text'); 
 
