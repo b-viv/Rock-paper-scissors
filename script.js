@@ -33,8 +33,6 @@ let score = 0;
 
 let isChecked = false;
 
-console.log(isChecked);
-
 document.addEventListener("DOMContentLoaded", () => {
     isChecked = JSON.parse(localStorage.getItem('isChecked')) || false;
     score = parseInt(localStorage.getItem('score')) || 0;
