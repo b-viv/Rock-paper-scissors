@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Click](https://www.frontendmentor.io/solutions/rock-paper-scissors-game-with-scss-and-js-uxPuWx0jGS)
+- Live Site URL: [Click](https://b-viv.github.io/Rock-paper-scissors/)
 
 ## My process
 
